@@ -1,0 +1,22 @@
+{
+    "name": "a3-dev-web-backend",
+    "version": "1.0.0",
+    "description": "Backend do projeto A3 Dev Web",
+    "main": "server.js",
+    "type": "module",
+    "scripts": {
+        "start": "node server.js",
+        "dev": "nodemon server.js"
+    },
+    "dependencies": {
+        "cors": "^2.8.5",
+        "express": "^4.18.2",
+        "luxon": "^3.6.1",
+        "sqlite3": "^5.1.7"
+    },
+    "devDependencies": {
+        "nodemon": "^3.0.1"
+    },
+    "author": "",
+    "license": "ISC"
+}
