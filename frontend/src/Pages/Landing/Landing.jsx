@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import '../../index.css';
 import {
   ArrowRight,
@@ -9,15 +9,18 @@ import {
   Smartphone,
   Users,
 } from "lucide-react";
-import Button from '@mui/material/Button';
-import Card from '@mui/material/Card';
-import CardHeader from '@mui/material/CardHeader';
-import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
-import Container from '@mui/material/Container';
-import Grid from '@mui/material/Grid';
-import Avatar from '@mui/material/Avatar';
-import TextField from '@mui/material/TextField';
+import {
+  Box,
+  Button,
+  Card,
+  CardHeader,
+  Container,
+  Grid,
+  TextField,
+  Typography,
+  Avatar,
+} from "@mui/material";
+
 const Link = ({ href, children, className }) => (
   <a href={href} className={className}>
     {children}

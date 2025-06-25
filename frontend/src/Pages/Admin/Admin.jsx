@@ -120,8 +120,8 @@ function Admin() {
           </Button>
         </Box>
 
-        <Paper elevation={3} sx={{overflowY: 'auto', height: '85vh'}}>
-          <Table >
+        <Paper elevation={3} sx={{overflowY: 'auto', height: '80vh'}}>
+          <Table stickyHeader>
             <TableHead>
               <TableRow>
                 <TableCell><strong>Nome</strong></TableCell>
