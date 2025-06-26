@@ -3,9 +3,10 @@ import cors from 'cors';
 import leadRoutes from './leads/lead.controller.js';
 
 const app = express();
+const PORT = 5000; 
 
 const corsOptions = {
-    origin: '/'  ,
+    origin: '*'  ,
     methods: ['GET', 'POST', 'DELETE'],
   };
 
@@ -14,6 +15,5 @@ app.use(express.json());
 
 app.use('/api/leads', leadRoutes);
 
-const PORT = 5000;
 app.listen(PORT, () => console.log(`Servidor rodando na porta ${PORT}`));
 

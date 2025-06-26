@@ -50,10 +50,10 @@ export default function Landing() {
     <Box sx={{ minHeight: '100vh', bgcolor: 'white' }}>
     { /* Cabeçalho de navegação */}
       <Box component="header" sx={{ borderBottom: 1, borderColor: 'grey.100' }}>
-        <Container maxWidth="lg" sx={{ py: 2, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+        <Container  sx={{ py: 2, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
             <Box sx={{ width: 32, height: 32, bgcolor: 'success.main', borderRadius: 1, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-              <FileText className="w-5 h-5 text-white" style={{ color: 'white' }} />
+              <FileText style={{ color: 'white', width:'1.5rem', height: '1.5rem' }} />
             </Box>
             <Typography variant="h6" component="span" sx={{ fontWeight: 'bold', color: 'text.primary' }}>
               FarmaGestor
@@ -76,7 +76,7 @@ export default function Landing() {
         </Container>
       </Box>
       {/*Apresentação inicial*/}
-      <Box component="section" sx={{ py: 10, bgcolor: 'background.paper', background: 'linear-gradient(to bottom right, #d1fae5, #dbeafe)' }}>
+      <Box component="section" sx={{ py: 25, background: 'linear-gradient(to bottom right, #d1fae5, #dbeafe)' }}>
         <Container maxWidth="md" sx={{ textAlign: 'center' }}>
           <Typography variant="h3" component="h1" sx={{ fontWeight: 'bold', mb: 2, color: 'text.primary' }}>
             Gerencie pedidos da sua <Box component="span" sx={{ color: 'success.main', display: 'block' }}>farmácia com facilidade</Box>
@@ -88,10 +88,10 @@ export default function Landing() {
           <Box sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, justifyContent: 'center', gap: 2 }}>
             <Button href="#captura" variant="contained" sx={{ bgcolor: 'success.main', px: 5, py: 1.5, ':hover': { bgcolor: 'success.dark' } }}>
               Começar Agora
-              <ArrowRight className="ml-2 w-5 h-5" style={{ marginLeft: 8 }} />
+              <ArrowRight className="ml-3 w-5 h-5"/>
             </Button>
-            <Button variant="outlined" sx={{ borderColor: 'success.main', color: 'success.main', px: 5, py: 1.5 }}>
-              Ver Demonstração
+            <Button href="#funcionalidades" variant="outlined" sx={{ borderColor: 'success.main', color: 'success.main', px: 5, py: 1.5 }}>
+              Conhecer Mais
             </Button>
           </Box>
         </Container>
@@ -122,18 +122,25 @@ export default function Landing() {
               description: "Controle completo dos pedidos: pendentes, aguardando pagamento e não faturados"
             }, {
               icon: <FileText className="w-7 h-7 text-white-600 mb-4 mt-4 ml-0.4"  />,
-              title: "Códigos de Barras",
-              description: "Visualize códigos de barras dos produtos para facilitar a emissão de notas fiscais"
-            }, {
+              title: "Histórico de Pedidos",
+              description: "Visualize todos os pedidos concluídos ou cancelados, e entre em contato com o cliente rápidamente via Whatsapp"
+            },
+            {
               icon: <Users className="w-7 h-7 text-white-600 mb-4 mt-4 ml-0.4"  />,
-              title: "Dados do Cliente",
-              description: "Acesso completo às informações do cliente: nome, endereço, WhatsApp e receitas"
+              title: "Contato Rápido",
+              description: "Com apenas um clique, inicie uma conversa via Whatsapp com o cliente"
             }, {
               icon: <CheckCircle className="w-7 h-7 text-white-600 mb-4 mt-4 ml-0.4" />,
               title: "Sistema de Notificações",
               description: "Notificações automáticas para clientes sobre mudanças de status dos pedidos"
-            }].map((item, index) => (
-              <Grid item xs={12} md={6} lg={4} key={index} width={500}>
+            },
+            {
+              icon: <FileText className="w-7 h-7 text-white-600 mb-4 mt-4 ml-0.4"  />,
+              title: "Relatórios dos pedidos",
+              description: "Gere relatórios mensais, semanais ou diários, com todas as informações referentes aos pedidos realizados no período"
+            },
+          ].map((item, index) => (
+              <Grid size={{ xs: 12, md: 6, lg: 4 }} key={index} width={500}>
                 <Card sx={{ p: 2, height: '100%', width: '100%'}}>
                   <CardHeader
                     avatar={<Avatar sx={{ bgcolor: 'success.main' }}>{item.icon}</Avatar>}
@@ -147,7 +154,7 @@ export default function Landing() {
         </Container>
       </Box>
       {/*Apresentação de como funciona o processo com o gestor */}
-      <Box component="section" id="como-funciona" sx={{ py: 10, bgcolor: 'grey.50' }}>
+      <Box component="section" id="como-funciona" sx={{ py: 10}}>
         <Container maxWidth="lg">
           <Box sx={{ textAlign: 'center', mb: 8 }}>
             <Typography variant="h4" sx={{ fontWeight: 'bold', mb: 2 }}>
@@ -181,7 +188,7 @@ export default function Landing() {
               title: "Confirmar Entrega",
               description: "Finalize o processo confirmando a entrega ou retirada do pedido pelo cliente"
             }].map(({ number, title, description }) => (
-              <Grid item xs={12} md={4} key={number} sx={{border: '1px solid green', borderRadius: 2, p: 4, textAlign: 'center'}}>
+              <Grid  size={{xs: 12, md: 6, lg: 4}}key={number} sx={{border: '1px solid green', borderRadius: 2, p: 4, textAlign: 'center'}}>
                 <Box
                   sx={{
                     width: 64,
@@ -215,9 +222,9 @@ export default function Landing() {
       {/*Beneficios de usar nossso gestor*/}
       <Box component="section" id="beneficios" sx={{ py: 10 }}>
         <Container maxWidth="lg">
-          <Grid container spacing={8} alignItems="center">
-            <Grid item xs={12} lg={6}>
-              <Typography variant="h4" sx={{ fontWeight: 'bold', mb: 4 }}>
+          <Grid container spacing={8} sx={{mx: 'auto', justifyContent: 'center'}}>
+            <Grid container size={{md: 12, lg: 6}} sx={{justifyContent: 'center', alignContent: 'center' }} >
+              <Typography variant="h4" sx={{ fontWeight: 'bold', textAlign: 'center' }}>
                 Por que escolher o FarmaGestor?
               </Typography>
               <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
@@ -252,7 +259,7 @@ export default function Landing() {
                 ))}
               </Box>
             </Grid>
-            <Grid item xs={12} lg={6} sx={{ textAlign: 'center' }}>
+            <Grid size={{xs:12, lg:6}} sx={{ textAlign: 'center' }}>
               <Box sx={{ bgcolor: 'success.light', borderRadius: 3, p: 6, maxWidth: 360, mx: 'auto' }}>
                 <Box sx={{ width: 128, height: 128, bgcolor: 'success.main', borderRadius: 3, mx: 'auto', mb: 3, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                   <FileText style={{ color: 'white', width: 64, height: 64 }} />
@@ -273,7 +280,7 @@ export default function Landing() {
       </Box>
       {/*captura das informações do lead*/}
       <Box component="section" id="captura"sx={{ py: 10, bgcolor: 'background.default' }}>
-        <Container Container maxWidth="sm" sx={{ textAlign: 'center' }}>
+        <Container maxWidth="sm" sx={{ textAlign: 'center' }}>
           <Typography variant="h4" sx={{ fontWeight: 'bold', mb: 1, color: 'text.primary' }}>
             Se interessou pelo FarmaGestor?
           </Typography>
@@ -352,7 +359,7 @@ export default function Landing() {
       <Box component="footer" sx={{ py: 8, bgcolor: 'grey.900' }}>
         <Container maxWidth="lg">
           <Grid container spacing={4}>
-            <Grid item xs={12} md={3}>
+            <Grid size={{xs:12, md:3}}>
               <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 2 }}>
                 <Box sx={{ width: 32, height: 32, bgcolor: 'success.main', borderRadius: 1, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                   <FileText style={{ color: 'white', width: 20, height: 20 }} />
@@ -365,8 +372,7 @@ export default function Landing() {
                 Sistema completo para gestão de pedidos farmacêuticos
               </Typography>
             </Grid>
-
-            <Grid item xs={12} md={3}>
+            <Grid size={{xs:12, md:3}}>
               <Typography variant="subtitle1" sx={{ color: 'common.white', mb: 1, fontWeight: 'bold' }}>
                 Produto
               </Typography>
@@ -380,8 +386,7 @@ export default function Landing() {
                 ))}
               </Box>
             </Grid>
-
-            <Grid item xs={12} md={3}>
+            <Grid size={{xs:12, md:3}}>
               <Typography variant="subtitle1" sx={{ color: 'common.white', mb: 1, fontWeight: 'bold' }}>
                 Suporte
               </Typography>
@@ -395,8 +400,7 @@ export default function Landing() {
                 ))}
               </Box>
             </Grid>
-
-            <Grid item xs={12} md={3}>
+            <Grid size={{xs:12, md:3}}>
               <Typography variant="subtitle1" sx={{ color: 'common.white', mb: 1, fontWeight: 'bold' }}>
                 Legal
               </Typography>

@@ -18,13 +18,14 @@ function Admin() {
   const [busca, setBusca] = useState('');
   const [filtro, setFiltro] = useState([]);
   const [senha, setSenha] = useState('');
+  const [user, setUser] = useState('')
   const [autenticado, setAutenticado] = useState(false);
 
   const autenticar = () => {
-    if (senha === 'admin123') {
+    if (senha === '@dmin123' && user === 'admin') {
       setAutenticado(true);
     } else {
-      alert('Senha incorreta');
+      alert('Usuário ou senha incorretos');
     }
   };
 
@@ -77,18 +78,28 @@ function Admin() {
             Área Administrativa
           </Typography>
           <TextField
+          type="text"
+          label="Digite o usuário"
+          variant='outlined'
+          fullWidth
+          value={user}
+          onChange={e => setUser(e.target.value)}
+          sx={{mb: 2}}
+          />
+          <TextField
             type="password"
             label="Digite a senha"
             variant="outlined"
             fullWidth
             value={senha}
             onChange={e => setSenha(e.target.value)}
+            sx={{mb: 2}}
           />
           <Button
             variant="contained"
             color="primary"
             fullWidth
-            sx={{height: 40}}
+            sx={{height: 45, bgcolor:'success.main'}}
             onClick={autenticar}
           >
             Entrar
