@@ -234,12 +234,12 @@ export default function Landing() {
                   description: "Design minimalista que facilita o uso diário sem complicações"
                 }, {
                   icon: <CheckCircle sx={{ color: 'success.main', mt: 0.5 }} />,
-                  title: "Segurança Garantida",
-                  description: "Sistema de validação por CNPJ e controle rigoroso de acesso"
+                  title: "Agilidade na comunicação",
+                  description: "Redirecionamento rápido e preciso para uma conversa entre cliente e vendedor"
                 }, {
                   icon: <CheckCircle sx={{ color: 'success.main', mt: 0.5 }} />,
                   title: "Integração Completa",
-                  description: "Conecta perfeitamente com seu sistema de notas fiscais existente"
+                  description: "Conecta perfeitamente com o sistema de vendas mobile"
                 }, {
                   icon: <CheckCircle sx={{ color: 'success.main', mt: 0.5 }} />,
                   title: "Comunicação Automática",
